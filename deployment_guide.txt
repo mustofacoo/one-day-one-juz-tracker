@@ -1,0 +1,274 @@
+# 🚀 Panduan Deploy ke GitHub Pages (Menggunakan GUI)
+
+Panduan lengkap untuk deploy aplikasi One Day One Juz Tracker ke GitHub Pages menggunakan GitHub Desktop (GUI) - **TANPA TERMINAL/COMMAND LINE**.
+
+## 📋 Persiapan
+
+### Yang Dibutuhkan:
+1. ✅ Akun GitHub (gratis)
+2. ✅ GitHub Desktop (aplikasi GUI)
+3. ✅ Node.js (untuk menjalankan website lokal)
+4. ✅ File project React yang sudah didownload
+
+---
+
+## 🔧 Langkah 1: Setup Akun dan Tools
+
+### 1.1 Buat Akun GitHub
+1. Buka [github.com](https://github.com)
+2. Klik **"Sign up"**
+3. Isi username, email, password
+4. Verifikasi email
+5. Catat **username GitHub** Anda (akan dipakai nanti)
+
+### 1.2 Download GitHub Desktop
+1. Buka [desktop.github.com](https://desktop.github.com)
+2. Klik **"Download for Windows"** (atau Mac)
+3. Install aplikasinya
+4. Buka GitHub Desktop
+5. Login dengan akun GitHub Anda
+
+### 1.3 Download Node.js
+1. Buka [nodejs.org](https://nodejs.org)
+2. Download versi **LTS** (yang recommended)
+3. Install dengan next-next aja
+4. Restart komputer setelah install
+
+---
+
+## 📁 Langkah 2: Siapkan Project
+
+### 2.1 Download Project Files
+1. Copy semua file React project ke satu folder
+2. Pastikan ada file `package.json` di dalamnya
+3. Beri nama folder: `one-day-one-juz-tracker`
+
+### 2.2 Edit Configuration
+1. Buka file `package.json` dengan text editor (Notepad++ atau VS Code)
+2. Cari baris yang ada `"homepage"`
+3. Ganti `yourusername` dengan **username GitHub Anda**:
+   ```json
+   "homepage": "https://username-github-anda.github.io/one-day-one-juz-tracker"
+   ```
+4. Contoh: jika username Anda `john123`, maka:
+   ```json
+   "homepage": "https://john123.github.io/one-day-one-juz-tracker"
+   ```
+5. Save file
+
+---
+
+## 🌐 Langkah 3: Buat Repository di GitHub
+
+### 3.1 Buat Repository Baru
+1. Login ke [github.com](https://github.com)
+2. Klik tombol hijau **"New"** (atau tanda **+** di pojok kanan atas)
+3. Isi form:
+   - **Repository name**: `one-day-one-juz-tracker`
+   - **Description**: `One Day One Juz Tracker - Aplikasi tracking Al-Qur'an`
+   - Pilih **Public** (biar bisa di-deploy gratis)
+   - ✅ Centang **"Add a README file"**
+4. Klik **"Create repository"**
+
+### 3.2 Clone ke Local
+1. Di halaman repository yang baru dibuat, klik tombol hijau **"<> Code"**
+2. Pilih tab **"Local"** → **"Open with GitHub Desktop"**
+3. GitHub Desktop akan terbuka
+4. Pilih folder tempat menyimpan (contoh: `C:\Users\NamaAnda\Documents\GitHub`)
+5. Klik **"Clone"**
+
+---
+
+## 📂 Langkah 4: Copy Files ke Repository
+
+### 4.1 Copy Project Files
+1. Buka folder repository hasil clone (contoh: `C:\Users\NamaAnda\Documents\GitHub\one-day-one-juz-tracker`)
+2. **Hapus** file `README.md` yang ada
+3. **Copy semua file** project React ke folder ini
+4. Pastikan struktur seperti ini:
+   ```
+   one-day-one-juz-tracker/
+   ├── public/
+   ├── src/
+   ├── package.json
+   ├── .gitignore
+   └── README.md (yang baru)
+   ```
+
+### 4.2 Install Dependencies
+1. Buka **Command Prompt** (search "cmd" di Windows)
+2. Navigate ke folder project:
+   ```
+   cd C:\Users\NamaAnda\Documents\GitHub\one-day-one-juz-tracker
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Install deployment tool:
+   ```
+   npm install --save-dev gh-pages
+   ```
+5. Tunggu sampai selesai (beberapa menit)
+
+---
+
+## 📤 Langkah 5: Upload ke GitHub
+
+### 5.1 Commit Changes
+1. Buka **GitHub Desktop**
+2. Pastikan repository `one-day-one-juz-tracker` terpilih
+3. Di bagian kiri akan terlihat semua file yang berubah
+4. Di bagian bawah kiri:
+   - **Summary**: tulis `Initial commit - React project setup`
+   - **Description** (opsional): `Upload all React project files`
+5. Klik **"Commit to main"**
+
+### 5.2 Push ke GitHub
+1. Setelah commit, akan muncul tombol **"Push origin"**
+2. Klik **"Push origin"**
+3. Tunggu sampai upload selesai
+4. Buka browser, refresh halaman repository GitHub
+5. Pastikan semua file sudah terupload
+
+---
+
+## 🚀 Langkah 6: Deploy ke GitHub Pages
+
+### 6.1 Build dan Deploy
+1. Kembali ke **Command Prompt**
+2. Pastikan masih di folder project
+3. Jalankan perintah deploy:
+   ```
+   npm run deploy
+   ```
+4. Tunggu proses selesai (2-5 menit)
+5. Jika ada pertanyaan, tekan **Enter** aja
+
+### 6.2 Aktifkan GitHub Pages
+1. Buka repository di **github.com**
+2. Klik tab **"Settings"** (di pojok kanan)
+3. Scroll ke bawah cari **"Pages"** (di menu kiri)
+4. Di bagian **"Source"**:
+   - Pilih **"Deploy from a branch"**
+   - **Branch**: pilih **"gh-pages"**
+   - **Folder**: biarkan **"/ (root)"**
+5. Klik **"Save"**
+
+### 6.3 Tunggu Deployment
+1. Akan muncul kotak biru dengan tulisan:
+   ```
+   Your site is ready to be published at https://username-anda.github.io/one-day-one-juz-tracker/
+   ```
+2. **Tunggu 5-10 menit** untuk proses deployment
+3. Klik link tersebut untuk mengakses website
+
+---
+
+## ✅ Langkah 7: Verifikasi dan Test
+
+### 7.1 Akses Website
+1. Buka link: `https://username-anda.github.io/one-day-one-juz-tracker/`
+2. Website seharusnya muncul dengan tampilan yang sama
+3. Test fitur-fitur:
+   - ✅ Klik peserta untuk centang
+   - ✅ Login admin (username: admin, password: admin123)
+   - ✅ Lihat tab monthly
+   - ✅ Test responsive di HP
+
+### 7.2 Troubleshooting Umum
+
+**❌ Website tidak muncul / error 404:**
+- Tunggu 10-15 menit lagi
+- Cek apakah `homepage` di `package.json` sudah benar
+- Pastikan GitHub Pages sudah aktif
+
+**❌ Firebase error:**
+- Normal, karena menggunakan project demo
+- Website tetap bisa dipakai dengan localStorage
+
+**❌ Tampilan berantakan:**
+- Hard refresh: tekan `Ctrl + F5`
+- Clear cache browser
+
+---
+
+## 🔄 Langkah 8: Update Website (Nanti)
+
+Jika ingin update website di kemudian hari:
+
+### 8.1 Edit Files
+1. Edit file yang diperlukan di folder local
+2. Save changes
+
+### 8.2 Upload Changes
+1. Buka **GitHub Desktop**
+2. Akan terlihat file yang berubah
+3. Commit dengan message: `Update: deskripsi perubahan`
+4. Push ke GitHub
+
+### 8.3 Deploy Ulang
+1. Buka **Command Prompt**
+2. Navigate ke folder project
+3. Jalankan: `npm run deploy`
+4. Tunggu 5-10 menit untuk update
+
+---
+
+## 🎯 Tips dan Catatan
+
+### ✅ Do's:
+- **Backup project** sebelum deploy
+- **Test di local** dulu: `npm start`
+- **Commit sering** dengan message yang jelas
+- **Tunggu proses** deploy selesai sebelum test
+
+### ❌ Don'ts:
+- Jangan ubah nama repository setelah deploy
+- Jangan hapus branch `gh-pages`
+- Jangan lupa update `homepage` di `package.json`
+
+### 🔧 Commands Penting:
+```bash
+# Install dependencies
+npm install
+
+# Test local (opsional)
+npm start
+
+# Deploy ke GitHub Pages
+npm run deploy
+```
+
+### 📱 Sharing Website:
+Setelah berhasil deploy, share link ini:
+```
+https://username-anda.github.io/one-day-one-juz-tracker/
+```
+
+---
+
+## 🆘 Bantuan
+
+### GitHub Desktop:
+- [YouTube Tutorial GitHub Desktop](https://youtube.com/results?search_query=github+desktop+tutorial+bahasa+indonesia)
+
+### Node.js:
+- Download: [nodejs.org](https://nodejs.org)
+- Pilih versi LTS (Long Term Support)
+
+### Jika Stuck:
+1. Screenshot error
+2. Google error message
+3. Coba restart komputer
+4. Re-install Node.js jika perlu
+
+---
+
+## 🎉 Selamat!
+
+Jika berhasil, website Anda sudah online dan bisa diakses siapa saja! 
+
+**Link website:** `https://username-anda.github.io/one-day-one-juz-tracker/`
+
+Baraka Allahu fiikum! 🤲
